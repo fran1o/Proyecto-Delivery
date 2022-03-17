@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import ContainerCalendario from './Inicio/ContainerCalendario';
+import Header from './Inicio/Header';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import CreateOrders from './CreateOrders/CreateOrders';
+import Orders from './Orders/Orders';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route path='/crearpedidos' element={<CreateOrders />} />
+        <Route path='/historialpedidos' element={<Orders />} />
+      </Routes>
+     <ContainerCalendario />
     </div>
+    
+    </BrowserRouter>
+    
   );
 }
 
