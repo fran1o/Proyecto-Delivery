@@ -1,5 +1,35 @@
+.container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
 .containerNavbar{
     background-color: brown;
     color: rgb(252, 252, 64);
-    font-size: 50px;
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+}
+.containerNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.loading{
+    margin-top: 150px;
+}
+
+.buttonsNav{
+    font-family: 'Fredoka', sans-serif;
+}
+
+.goodMorning{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 40px;
+}
+
+.date{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 25px;
 }

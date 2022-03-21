@@ -1,9 +1,10 @@
 import './App.css';
-import ContainerCalendario from './Inicio/ContainerCalendario';
 import Header from './Inicio/Header';
+import Home from './Inicio/Home';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import CreateOrders from './CreateOrders/CreateOrders';
 import Orders from './Orders/Orders';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
       <Routes>
         <Route path='/crearpedidos' element={<CreateOrders />} />
         <Route path='/historialpedidos' element={<Orders />} />
+        <Route path='/' element={<Home />} />
       </Routes>
-     <ContainerCalendario />
     </div>
     
     </BrowserRouter>

@@ -13,9 +13,9 @@ const Header = () => {
 
 
     <Navbar className={styles.containerNavbar}>
-    <Container>
+    <Container className={styles.containerNav}>
       Delivery Pepote
-      <Nav className="me-auto">
+      <Nav className={styles.buttonsNav}>
         <Link to='/crearpedidos'>
             <Button variant="warning">Hacer Pedidos</Button>
         </Link>
