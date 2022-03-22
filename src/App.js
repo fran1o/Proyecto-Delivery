@@ -7,19 +7,23 @@ import Orders from './Orders/Orders';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
   return (
-    <BrowserRouter>
+
+      <BrowserRouter>
     <div className="App">
       <Header />
       <Routes>
         <Route path='/crearpedidos' element={<CreateOrders />} />
-        <Route path='/historialpedidos' element={<Orders />} />
+        <Route path='/pedidos' element={<Orders />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </div>
-    
+  
     </BrowserRouter>
+
     
+
   );
 }
 

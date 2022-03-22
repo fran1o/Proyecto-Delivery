@@ -4,7 +4,7 @@ import React from 'react'
 const Orders = () => {
   return (
     <div>
-      aca el historial de pedidos
+      aca van todos los pedidos
     </div>
   )
   

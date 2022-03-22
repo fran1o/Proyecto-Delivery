@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from "react-bootstrap/Navbar"
-import Nav from "react-bootstrap/Nav"
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container"
 import styles from '../CSS/containerNavbar.module.css'
@@ -13,17 +12,15 @@ const Header = () => {
 
 
     <Navbar className={styles.containerNavbar}>
-    <Container className={styles.containerNav}>
-      Delivery Pepote
-      <Nav className={styles.buttonsNav}>
+      <Container className={styles.containerNav}>
+          Delivery Pepote
         <Link to='/crearpedidos'>
-            <Button variant="warning">Hacer Pedidos</Button>
+            <Button className={styles.buttonsNav} variant="warning">Hacer Pedidos</Button>
         </Link>
-        <Link to='/historialpedidos'>
-        <Button variant="warning">Historial de pedidos</Button>
+        <Link to='/'>
+          <Button className={styles.buttonsNav} variant="warning">Historial de pedidos</Button>
         </Link>
 
-      </Nav>
     </Container>
   </Navbar>
 

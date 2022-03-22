@@ -26,7 +26,7 @@ const Home = () => {
                 </Spinner>
                  :
                  <div className={styles.container}>
-                 <h1>¡ Buenas Noches !</h1>
+                 <h1 className={styles.goodNight}>¡ Buenas Noches !</h1>
                  
               </div>
              }
