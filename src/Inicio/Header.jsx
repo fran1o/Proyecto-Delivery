@@ -15,9 +15,12 @@ const Header = () => {
       <Container className={styles.containerNav}>
           Delivery Pepote
         <Link to='/crearpedidos'>
-            <Button className={styles.buttonsNav} variant="warning">Hacer Pedidos</Button>
+            <Button className={styles.buttonsNav} variant="warning">Crear repartidor</Button>
         </Link>
-        <Link to='/'>
+        <Link to='/pedidos'>
+          <Button className={styles.buttonsNav} variant="warning">Pedidos de hoy</Button>
+        </Link>
+        <Link to='/historial'>
           <Button className={styles.buttonsNav} variant="warning">Historial de pedidos</Button>
         </Link>
 
