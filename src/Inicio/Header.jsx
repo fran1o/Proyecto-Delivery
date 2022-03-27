@@ -14,11 +14,11 @@ const Header = () => {
     <Navbar className={styles.containerNavbar}>
       <Container className={styles.containerNav}>
           Delivery Pepote
-        <Link to='/crearpedidos'>
+        <Link to='/crearrepartidor'>
             <Button className={styles.buttonsNav} variant="warning">Crear repartidor</Button>
         </Link>
         <Link to='/pedidos'>
-          <Button className={styles.buttonsNav} variant="warning">Pedidos de hoy</Button>
+            <Button className={styles.buttonsNav} variant="warning">Repartidores</Button>
         </Link>
         <Link to='/historial'>
           <Button className={styles.buttonsNav} variant="warning">Historial de pedidos</Button>

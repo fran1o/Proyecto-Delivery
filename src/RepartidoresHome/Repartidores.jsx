@@ -3,12 +3,14 @@ import styles from '../CSS/form.module.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Spinner from 'react-bootstrap/Spinner'
-import Formulario from '../Form/Form'
+import InfoRepartidor from '../Table/InfoRepartidor'
 
 
-const CreateOrders = () => {
+const Repartidores = () => {
 
+  
   const [loading, setLoading] = useState(true)
+  
   
   useEffect(() => {
     setTimeout(() =>{
@@ -25,12 +27,17 @@ const CreateOrders = () => {
                     <span></span>
                 </Spinner> 
               :
-              <Formulario />
+              <div className={styles.divContainer}>
+
+                <InfoRepartidor />
+                
+              </div>
+              
   
   }
   
   </>
 }
 
-export default CreateOrders
+export default Repartidores
 

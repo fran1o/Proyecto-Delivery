@@ -2,11 +2,12 @@ import './App.css';
 import Header from './Inicio/Header';
 import Home from './Inicio/Home';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import CreateOrders from './CreateOrders/CreateOrders';
-import Orders from './Orders/Orders';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartContextProvider from './Context/CartContext';
 import Historial from './Historial/Historial';
+import Repartidores from './RepartidoresHome/Repartidores';
+import TablaPedido from './Table/TablaPedido';
+
 
 function App() {
 
@@ -17,8 +18,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path='/crearpedidos' element={<CreateOrders />} />
-        <Route path='/pedidos' element={<Orders />} />
+        <Route path='/crearrepartidor' element={<Repartidores />} />
+        <Route path='/pedidos' element={<TablaPedido />} />
         <Route path='/historial' element={<Historial />} />
         <Route path='/' element={<Home />} />
       </Routes>

@@ -1,21 +1,15 @@
-.divForm{
-    height: 550px;
-    width: 550px;
-    margin-left: 400px;
-    margin-top: 20px;
-    border-radius: 0.4em;
-    box-shadow: 0.3em 0.3em 0.7em #00000015;
-    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: rgb(250, 105, 105) 0.2em solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.divForm:hover{
-    border: #aa1c1c 0.2em solid;
+.divContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 275px);
+    gap: 50px;
+    margin-left: 250px;
+    margin-top: 50px;
 }
 
 .loading{
     margin-top: 150px;
+}
+
+.headerCard{
+    background-color: rgb(255, 255, 78);
 }

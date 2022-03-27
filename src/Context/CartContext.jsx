@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { createContext } from "react";
 import { useContext } from "react";
 
@@ -8,34 +8,33 @@ export function useCartContext() {return useContext(cartContext)}
 
 function CartContextProvider ({children}) {
 
-  const [infoRepartidor, setInfoRepartidor] = useState({
-    
-    nombre:'',
-    cambio:'',
-    fecha:'',
 
-  })
-
-  const handleChange = (event) => {
+  /*const handleChange = (event) => {
 
     setInfoRepartidor({
       ...infoRepartidor,
       [event.target.name] : event.target.value
     })
-  }
-
-  const guardarDatos = (e) =>{
-    e.preventDefault()
-    console.log(infoRepartidor)
-    setButtonForm(false)
-  }
-
-  const [buttonForm, setButtonForm] = useState(true)
+  }*/
 
 
+  /*function agregarRepartidor(persona){
+    const index = cartOrdersList.findIndex(repartidor => repartidor.persona.id === persona.id)
+
+    if(index === -1 ){
+
+      setCartOrdersList([{...setCartOrdersList, persona}])
+
+    }else{
+
+      const newCartOrderList = [...cartOrdersList]
+      setCartOrdersList(newCartOrderList)
+
+
+    }*/
     
 
-      return <cartContext.Provider value={ {guardarDatos, handleChange, infoRepartidor, buttonForm } }>
+      return <cartContext.Provider>
           {children}
       </cartContext.Provider>
 
