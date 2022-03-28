@@ -22,8 +22,7 @@ const Historial = () => {
                   :
                   <h1>HISTORIAL</h1>
         }
-  
-  
+
   </>
 }
 

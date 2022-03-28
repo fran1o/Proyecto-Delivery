@@ -3,7 +3,6 @@ import Header from './Inicio/Header';
 import Home from './Inicio/Home';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CartContextProvider from './Context/CartContext';
 import Historial from './Historial/Historial';
 import Repartidores from './RepartidoresHome/Repartidores';
 import TablaPedido from './Table/TablaPedido';
@@ -12,7 +11,7 @@ import TablaPedido from './Table/TablaPedido';
 function App() {
 
   return (
-    <CartContextProvider>
+
 
 <BrowserRouter>
     <div className="App">
@@ -27,8 +26,6 @@ function App() {
   
     </BrowserRouter>
 
-
-    </CartContextProvider>
       
 
     
