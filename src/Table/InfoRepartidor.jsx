@@ -5,14 +5,23 @@ import styles from '../CSS/form.module.css'
 
 const InfoRep = () => {
 
+//Conecto firebase
+
   const db = getFirestore()
+
+//Formulario vacio
 
   const infoInicial = {
     nombre:'',
     cambio:'',
     fecha:''
   }
+
+//Variables de estado
+
   const [infoRepartidor, setInfoRepartidor] = useState (infoInicial)
+
+//Sustituyo los datos vacios del formulario con los datos del valor del input 
 
   const capturarDatos = (event) => {
     setInfoRepartidor({
@@ -20,6 +29,8 @@ const InfoRep = () => {
       [event.target.name] : event.target.value
     })
   }
+
+//Mando ese valor del input a la base de datos firebase
 
   const guardarDatos = async(e)=>{
     e.preventDefault();
@@ -32,6 +43,9 @@ const InfoRep = () => {
     }catch(error){
       console.log(error)
     }
+
+//Uso la infoInicial para vaciar el formulario despues de realizar el envio de datos
+
     setInfoRepartidor({...infoInicial})
   
   }

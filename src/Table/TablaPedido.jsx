@@ -7,10 +7,16 @@ import styles from '../CSS/form.module.css'
 
 const TablaPedido = () => {
 
+//Variables de estado
+
   const [listRepartidores, setListRepartidores] = useState([])
-  
+
+//Conecto firebase y llamo a esa collection
+
   const db = getFirestore()
   const queryCollection = collection(db, 'repartidores')
+
+//Traigo la info del repartidor de mi base de datos y la guardo en setListRepartidores
 
   getDocs(queryCollection)
   .then((resp) => 
@@ -18,6 +24,8 @@ const TablaPedido = () => {
             resp.docs.map((rep) => ({id: rep.id, ...rep.data() } ))
           ))
   .catch((err) => console.log(err))
+
+//loading..
 
   const [loading, setLoading] = useState(true)
   

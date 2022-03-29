@@ -7,7 +7,11 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
 const Tabla = ({id, nombre, cambio, fecha}) => {
 
+//Conecto firebase
+
   const db = getFirestore()
+
+//Formulario vacio
 
   const infoInicialPedido = {
     pedido:'',
@@ -15,7 +19,11 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
     destino:''
   }
 
+//Variables de estado
+
   const [infoPedido, setInfoPedido] = useState(infoInicialPedido)
+
+//Sustituyo los datos vacios del formulario con los datos del valor del input 
 
   const capturarPedido = (event) =>{
     setInfoPedido({
@@ -24,6 +32,8 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
     })
 
   }
+
+//A ese valor del input lo mando con esta funcion a mi base de datos
 
   const realizarPedido = async (e) => {
     e.preventDefault();
@@ -38,6 +48,8 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
       console.log(error)
     
     }
+
+//Uso la infoInicialPedido para vaciar el formulario despues de realizar el envio de datos
 
     setInfoPedido({...infoInicialPedido})
   }
