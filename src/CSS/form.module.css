@@ -30,3 +30,14 @@
 .titleForm{
     font-family: 'Lobster', cursive;
 }
+
+.theadTable{
+    color: wheat;
+    background-color: rgba(0, 0, 0, 0.822);
+
+}
+
+.buttonDelete{
+    display: flex;
+    justify-content: center;
+}

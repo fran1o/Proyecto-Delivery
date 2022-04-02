@@ -7,6 +7,7 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
 const Tabla = ({id, nombre, cambio, fecha}) => {
 
+
 //Conecto firebase
 
   const db = getFirestore()
@@ -41,7 +42,7 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
 
     try {
       await addDoc(collection(db,'pedidos'),{
-        ...infoPedido, nombre, cambio, fecha
+        ...infoPedido, nombre, cambio, fecha, idRep:id
       })
       
     } catch (error) {
@@ -52,8 +53,8 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
 //Uso la infoInicialPedido para vaciar el formulario despues de realizar el envio de datos
 
     setInfoPedido({...infoInicialPedido})
-  }
 
+  }
     
   return <>
 
@@ -82,6 +83,8 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
               </div>
   
               <button className='btn btn-danger'>Realizar pedido</button>
+              <br></br>
+              
   
             </div>
           </form>
