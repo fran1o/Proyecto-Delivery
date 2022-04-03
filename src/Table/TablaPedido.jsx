@@ -36,6 +36,7 @@ const TablaPedido = () => {
     }, 2000)
   }, [])
 
+
   return <>
 
       {loading ? <Spinner className={styles.loading} animation="border" role="status">

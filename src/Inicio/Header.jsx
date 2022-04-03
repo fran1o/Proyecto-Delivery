@@ -17,7 +17,7 @@ const Header = () => {
         <Link to='/crearrepartidor'>
             <Button className={styles.buttonsNav} variant="warning">Crear repartidor</Button>
         </Link>
-        <Link to='/pedidos'>
+        <Link to='/repartidores'>
             <Button className={styles.buttonsNav} variant="warning">Repartidores</Button>
         </Link>
         <Link to='/historial'>

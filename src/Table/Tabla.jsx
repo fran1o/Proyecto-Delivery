@@ -1,8 +1,10 @@
 import React from 'react'
 import styles from '../CSS/form.module.css'
-import { useState } from 'react'
+import { useState} from 'react'
 import ListGroup from 'react-bootstrap/ListGroup'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom';
 
 
 const Tabla = ({id, nombre, cambio, fecha}) => {
@@ -55,46 +57,49 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
     setInfoPedido({...infoInicialPedido})
 
   }
-    
+
   return <>
 
-  { <div>
-      <ListGroup key={id} as="ul">
-          <ListGroup.Item as="li" active>
-            {nombre}
-          </ListGroup.Item>
-        <ListGroup.Item as="li">Cambio inicial: ${cambio}</ListGroup.Item>
-        <ListGroup.Item as="li">
-          {fecha}
-        </ListGroup.Item>
-      </ListGroup>
+  {
+            <div>
+                    <ListGroup key={id} as="ul">
+                        <ListGroup.Item as="li" active>
+                          {nombre}
+                        </ListGroup.Item>
+                      <ListGroup.Item as="li">Cambio inicial: ${cambio}</ListGroup.Item>
+                      <ListGroup.Item as="li">
+                        {fecha}
+                      </ListGroup.Item>
+                    </ListGroup>
 
-      <br></br>
+                    <br></br>
 
-      <div className={styles.divFormPedido}>
-      <form onSubmit={realizarPedido}>
-            <div className='card card-body'>
-              <div className='form-group' >
-  
-              <input type='text' name='pedido' className='form-control mb-3' placeholder='Pedido' onChange={capturarPedido} value={infoPedido.pedido} /> 
-              <input type='text' name='precio' className='form-control mb-3' placeholder='Ingrese solo numeros, sin $' onChange={capturarPedido} value={infoPedido.precio}/>
-              <input type='text' name='destino' className='form-control mb-3' placeholder='Destino' onChange={capturarPedido} value={infoPedido.destino} />
-  
-              </div>
-  
-              <button className='btn btn-danger'>Realizar pedido</button>
-              <br></br>
+                    <div className={styles.divFormPedido}>
+                    <form onSubmit={realizarPedido}>
+                          <div className='card card-body'>
+                            <div className='form-group' >
+                
+                            <input type='text' name='pedido' className='form-control mb-3' placeholder='Pedido' onChange={capturarPedido} value={infoPedido.pedido} /> 
+                            <input type='text' name='precio' className='form-control mb-3' placeholder='Ingrese solo numeros, sin $' onChange={capturarPedido} value={infoPedido.precio}/>
+                            <input type='text' name='destino' className='form-control mb-3' placeholder='Destino' onChange={capturarPedido} value={infoPedido.destino} />
+                
+                            </div>
+                
+                            <button className='btn btn-danger'>Realizar pedido</button>
+                            <br></br>
+
+                            <Link to={`/repartidor/${id}`} >
+                            <Button>Ver pedidos del repartidor {nombre}</Button>
+                            </Link>
+                            
+                
+                          </div>
+                        </form>
+                
+                  </div>
+
+                </div>
               
-  
-            </div>
-          </form>
-  
-    </div>
-
-  </div>
-  
-
-
   }
   
   </>

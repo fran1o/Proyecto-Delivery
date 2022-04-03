@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Historial from './Historial/Historial';
 import Repartidores from './RepartidoresHome/Repartidores';
 import TablaPedido from './Table/TablaPedido';
+import ItemDetailPedidos from './Pedidos/ItemDetailPedidos';
 
 
 function App() {
@@ -18,9 +19,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/crearrepartidor' element={<Repartidores />} />
-        <Route path='/pedidos' element={<TablaPedido />} />
+        <Route path='/repartidores' element={<TablaPedido />} />
         <Route path='/historial' element={<Historial />} />
         <Route path='/' element={<Home />} />
+        <Route path='/repartidor/:idRepartidor' element={<ItemDetailPedidos />} />
       </Routes>
     </div>
   
