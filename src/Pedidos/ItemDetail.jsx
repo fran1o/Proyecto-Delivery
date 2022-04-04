@@ -17,10 +17,13 @@ const ItemDetail = ({repartidores}) => {
               ))
       .catch((err) => console.log(err))
 
-
   const pedidosFiltrados = pedidosParaFiltrar.filter(pedido => pedido.idRep === repartidores.id);
 
-  console.log(pedidosFiltrados)
+  const totalSumary = () => {
+
+    return pedidosFiltrados.reduce((acum, ped) => ped.precio = (Number(ped.precio) + acum), 0)
+}
+
 
   return <>
                 <Table key={repartidores.id} striped bordered hover variant="dark">
@@ -42,9 +45,10 @@ const ItemDetail = ({repartidores}) => {
                           </tr>
                         </tbody>)
                       }
-                      
+              
                       </Table>
-  
+                      
+                         <h3>{`El total ralizado por ${repartidores.nombre} es: $ ${totalSumary()}`} </h3>
   </>
 }
 

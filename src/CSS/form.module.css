@@ -21,7 +21,7 @@
 }
 
 .divFormPedido{
-    margin-left: 300px;
+    margin-left: 450px;
     height: 300px;
     width: 450px;
 }
@@ -40,4 +40,9 @@
 .buttonDelete{
     display: flex;
     justify-content: center;
+}
+
+.nameRep{
+    background-color: black;
+    color: wheat;
 }

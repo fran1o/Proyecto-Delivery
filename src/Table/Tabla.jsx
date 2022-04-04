@@ -26,6 +26,10 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
 
   const [infoPedido, setInfoPedido] = useState(infoInicialPedido)
 
+//Cambio el valor del preciostring a precio numero
+
+  
+
 //Sustituyo los datos vacios del formulario con los datos del valor del input 
 
   const capturarPedido = (event) =>{
@@ -61,9 +65,11 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
   return <>
 
   {
+            
             <div>
+              <br></br>
                     <ListGroup key={id} as="ul">
-                        <ListGroup.Item as="li" active>
+                        <ListGroup.Item className={styles.nameRep}>
                           {nombre}
                         </ListGroup.Item>
                       <ListGroup.Item as="li">Cambio inicial: ${cambio}</ListGroup.Item>
@@ -97,7 +103,7 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
                         </form>
                 
                   </div>
-
+                  <br></br>
                 </div>
               
   }
