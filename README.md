@@ -84,3 +84,5 @@ INSTALACION
 "firebase": "^9.6.6", inicia nuestra conexion entre la app y su base de datos en firebase/firestore
 
 DEMO
+
+https://grand-mandazi-815b2a.netlify.app/

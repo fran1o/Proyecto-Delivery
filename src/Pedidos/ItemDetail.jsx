@@ -46,7 +46,6 @@ const ItemDetail = ({repartidores}) => {
                           </tr>
                         </tbody>)
                       }
-              
                       </Table>
                       
                          <h3 className={styles.total} >El total ralizado por {repartidores.nombre} es: ${totalSumary()} </h3>
