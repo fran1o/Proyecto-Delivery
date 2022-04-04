@@ -72,8 +72,8 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
                         <ListGroup.Item className={styles.nameRep}>
                           {nombre}
                         </ListGroup.Item>
-                      <ListGroup.Item as="li">Cambio inicial: ${cambio}</ListGroup.Item>
-                      <ListGroup.Item as="li">
+                      <ListGroup.Item as="li" className={styles.cambioFecha} >Cambio inicial: ${cambio}</ListGroup.Item>
+                      <ListGroup.Item as="li" className={styles.cambioFecha} >
                         {fecha}
                       </ListGroup.Item>
                     </ListGroup>
@@ -82,7 +82,7 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
 
                     <div className={styles.divFormPedido}>
                     <form onSubmit={realizarPedido}>
-                          <div className='card card-body'>
+                          <div className='card card-body color:blue' >
                             <div className='form-group' >
                 
                             <input type='text' name='pedido' className='form-control mb-3' placeholder='Pedido' onChange={capturarPedido} value={infoPedido.pedido} /> 
@@ -91,11 +91,12 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
                 
                             </div>
                 
-                            <button className='btn btn-danger'>Realizar pedido</button>
+                            <button className='btn btn-primary'>Realizar pedido</button>
+
                             <br></br>
 
                             <Link to={`/repartidor/${id}`} >
-                            <Button>Ver pedidos del repartidor {nombre}</Button>
+                            <Button variant='warning' >Ver pedidos del repartidor {nombre}</Button>
                             </Link>
                             
                 

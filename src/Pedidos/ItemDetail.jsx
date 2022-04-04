@@ -2,6 +2,7 @@ import React from 'react'
 import Table from 'react-bootstrap/Table'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import {useState } from 'react'
+import styles from '../CSS/form.module.css'
 
 const ItemDetail = ({repartidores}) => {
 
@@ -39,16 +40,16 @@ const ItemDetail = ({repartidores}) => {
                         pedidosFiltrados.map(pedido => <tbody key={pedido.id}>
                           <tr>
                             <th></th>
-                            <th>{pedido.pedido}</th>
+                            <th className={styles.pedidoDestino}>{pedido.pedido}</th>
                             <th>${pedido.precio}</th>
-                            <th>{pedido.destino}</th>
+                            <th className={styles.pedidoDestino}>{pedido.destino}</th>
                           </tr>
                         </tbody>)
                       }
               
                       </Table>
                       
-                         <h3>{`El total ralizado por ${repartidores.nombre} es: $ ${totalSumary()}`} </h3>
+                         <h3 className={styles.total} >El total ralizado por {repartidores.nombre} es: ${totalSumary()} </h3>
   </>
 }
 

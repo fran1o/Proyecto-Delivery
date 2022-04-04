@@ -18,14 +18,31 @@
     margin-left: 215px;
     height: 300px;
     width: 450px;
+    background: rgb(255, 255, 255);
+    border-radius: 0.4em;
+    box-shadow: 0.3em 0.3em 0.7em #00000015;
+    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: rgb(255, 164, 164) 0.2em solid;
+}
+
+.divForm:hover {
+    border: brown 0.2em solid;
 }
 
 .divFormPedido{
     margin-left: 450px;
     height: 300px;
     width: 450px;
+    background: rgb(255, 255, 255);
+    border-radius: 0.4em;
+    box-shadow: 0.3em 0.3em 0.7em #00000015;
+    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: rgb(164, 255, 164) 0.2em solid;
 }
 
+.divFormPedido:hover {
+    border: rgb(45, 207, 67) 0.2em solid;
+}
 
 .titleForm{
     font-family: 'Lobster', cursive;
@@ -45,4 +62,19 @@
 .nameRep{
     background-color: black;
     color: wheat;
+    font-size: 15px;
+}
+
+.total{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.cambioFecha{
+    background-color: rgb(242, 255, 242);
+    
+}
+
+.pedidoDestino{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
 }

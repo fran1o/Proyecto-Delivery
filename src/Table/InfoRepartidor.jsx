@@ -54,10 +54,12 @@ const InfoRep = () => {
             {
               
               <div className={styles.divForm} >
-                <h3 className={styles.titleForm}>Ingrese los datos de su repartidor</h3>
-                
+        
                 <form onSubmit={guardarDatos}>
+                
                   <div className='card card-body'>
+                  <h3 className={styles.titleForm}>Ingrese los datos de su repartidor</h3>
+                  
                     <div className='form-group'>
                       <input type='text' name='nombre' className='form-control mb-3' placeholder='Nombre del repartidor' onChange={capturarDatos} value={infoRepartidor.nombre} />
                       <input type='text' name='cambio' className='form-control mb-3' placeholder='Cambio inicial' onChange={capturarDatos} value={infoRepartidor.cambio} />

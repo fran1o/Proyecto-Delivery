@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+NOMBRE
+Delivery Pepote
+
+DESCRIPCION
+App web personalizada con funciones a pedido del cliente, control de salida de pedidos y calculo de total generado por cada repartidor
+
+INSTALACION
+"react-router-dom": "^6.2.1", react-router-dom nos permite ir a distintas secciones de la pagina a travez de un Link
+
+"react-bootstrap": "^2.1.1", nos permite traer librerias de react-bootstrap
+
+"firebase": "^9.6.6", inicia nuestra conexion entre la app y su base de datos en firebase/firestore
+
+DEMO
