@@ -1,24 +1,13 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
-import { collection, getDocs, getFirestore } from 'firebase/firestore'
-import {useState } from 'react'
 import styles from '../CSS/form.module.css'
+import { useCartContext } from '../Context/cartContext'
 
 const ItemDetail = ({repartidores}) => {
 
-  const db = getFirestore()
-  const [pedidosParaFiltrar, setPedidosParaFiltrar] = useState([])
+  const {orders} = useCartContext()
 
-  const queryCollection = collection(db,'pedidos')
-    
-      getDocs(queryCollection)
-      .then((respuesta) => 
-              setPedidosParaFiltrar(
-                respuesta.docs.map((order) => ({id: order.id, ...order.data() } ))
-              ))
-      .catch((err) => console.log(err))
-
-  const pedidosFiltrados = pedidosParaFiltrar.filter(pedido => pedido.idRep === repartidores.id);
+  const pedidosFiltrados = orders.filter(pedido => pedido.idRep === repartidores.id);
 
   const totalSumary = () => {
 
