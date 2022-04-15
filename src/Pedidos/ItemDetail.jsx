@@ -6,6 +6,8 @@ import { useCartContext } from '../Context/cartContext'
 const ItemDetail = ({repartidores}) => {
 
   const {orders} = useCartContext()
+  console.log(orders)
+  
 
   const pedidosFiltrados = orders.filter(pedido => pedido.idRep === repartidores.id);
 

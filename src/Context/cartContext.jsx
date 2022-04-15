@@ -10,35 +10,26 @@ export function useCartContext() {return useContext(cartContext)}
 
 function CartContextProvider({children}){
 
+  const [orders, setOrders] = useState([])
   const db = getFirestore()
-  
-//Variables de estado de los pedidos
-  
-const [orders, setOrders] = useState([])
-  
-//Traigo la info del pedido de mi base de datos 
 
   useEffect(() => {
     const db = getFirestore()
+  
+  //Traigo la info del pedido de mi base de datos y la guardo en setOrders
+  
+      const queryCollection = collection(db,'pedidos')
 
-    const getOrders = async () =>{
+  
+        getDocs(queryCollection)
+        .then((respuesta) => 
+                setOrders(
+                  respuesta.docs.map((order) => ({id: order.id, ...order.data() } ))
+                ))
+        .catch((err) => console.log(err))
 
-      try {
-        const querySnapshot = await getDocs(collection(db,'pedidos'))
-        const pedidos = []
-
-        querySnapshot.forEach((doc) => {
-          pedidos.push({ ...doc.data(), id: doc.id })
-        })
-        setOrders(pedidos)
-        
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getOrders()
-
-  },[orders])
+  },[])
+  
 
 //Eliminar pedido
 

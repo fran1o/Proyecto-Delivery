@@ -7,6 +7,8 @@ import styles from '../CSS/form.module.css'
 const ItemHistorial = () => {
 
     const {orders, eliminarPedido} = useCartContext()
+    console.log(orders)
+
 
   return <>
 
