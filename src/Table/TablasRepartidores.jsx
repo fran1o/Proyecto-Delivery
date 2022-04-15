@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Tabla from './Tabla'
+import TablaRealizarPedidoxRepartidor from './TablaRealizarPedidoxRepartidor'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import Spinner from 'react-bootstrap/Spinner'
 import styles from '../CSS/form.module.css'
@@ -11,19 +11,29 @@ const TablaPedido = () => {
 
   const [listRepartidores, setListRepartidores] = useState([])
 
-//Conecto firebase y llamo a esa collection
+ //Traigo la info del pedido de mi base de datos 
 
+ useEffect(() => {
   const db = getFirestore()
-  const queryCollection = collection(db, 'repartidores')
 
-//Traigo la info del repartidor de mi base de datos y la guardo en setListRepartidores
+  const getRepartidores = async () =>{
 
-  getDocs(queryCollection)
-  .then((resp) => 
-          setListRepartidores(
-            resp.docs.map((rep) => ({id: rep.id, ...rep.data() } ))
-          ))
-  .catch((err) => console.log(err))
+    try {
+      const querySnapshot = await getDocs(collection(db,'repartidores'))
+      const repartidores = []
+
+      querySnapshot.forEach((doc) => {
+        repartidores.push({ ...doc.data(), id: doc.id })
+      })
+      setListRepartidores(repartidores)
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  getRepartidores()
+
+},[listRepartidores])
 
 //loading..
 
@@ -44,7 +54,7 @@ const TablaPedido = () => {
                 </Spinner> 
                 :
                 listRepartidores.map(repartidor => 
-                <Tabla key={repartidor.id}
+                <TablaRealizarPedidoxRepartidor key={repartidor.id}
                       id={repartidor.id}
                       nombre={repartidor.nombre}
                       cambio={repartidor.cambio}
