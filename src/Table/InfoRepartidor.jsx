@@ -13,8 +13,7 @@ const InfoRep = () => {
 
   const infoInicial = {
     nombre:'',
-    cambio:'',
-    fecha:''
+    cambio:''
   }
 
 //Variables de estado
@@ -63,7 +62,6 @@ const InfoRep = () => {
                     <div className='form-group'>
                       <input type='text' name='nombre' className='form-control mb-3' placeholder='Nombre del repartidor' onChange={capturarDatos} value={infoRepartidor.nombre} />
                       <input type='text' name='cambio' className='form-control mb-3' placeholder='Cambio inicial' onChange={capturarDatos} value={infoRepartidor.cambio} />
-                      <input type='text' name='fecha' className='form-control mb-3' placeholder='Fecha de hoy' onChange={capturarDatos} value={infoRepartidor.fecha} />
                     </div>
   
                     <button className="btn btn-success">Guardar datos</button>

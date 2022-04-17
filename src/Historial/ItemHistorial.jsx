@@ -6,7 +6,7 @@ import styles from '../CSS/form.module.css'
 
 const ItemHistorial = () => {
 
-    const {orders, eliminarPedido} = useCartContext()
+    const {orders, eliminarPedido, actualizarHistorial} = useCartContext()
     console.log(orders)
 
 
@@ -34,12 +34,13 @@ const ItemHistorial = () => {
     </tr>
   </tbody>
 </Table>)}
+    
+    <Button onClick={() => actualizarHistorial()} >Actualizar Historial</Button>
   </div>
   
     :
     <h1 className={styles.noPedidos}>No hay pedidos</h1>
     }
-  
   
   </>
 }

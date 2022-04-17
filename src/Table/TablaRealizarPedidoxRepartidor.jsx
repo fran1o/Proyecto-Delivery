@@ -7,8 +7,7 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 
 
-const Tabla = ({id, nombre, cambio, fecha}) => {
-
+const Tabla = ({id, nombre, cambio}) => {
 
 //Conecto firebase
 
@@ -48,7 +47,7 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
 
     try {
       await addDoc(collection(db,'pedidos'),{
-        ...infoPedido, nombre, cambio, fecha, idRep:id
+        ...infoPedido, nombre, cambio, idRep:id
       })
       
     } catch (error) {
@@ -73,9 +72,7 @@ const Tabla = ({id, nombre, cambio, fecha}) => {
                           {nombre}
                         </ListGroup.Item>
                       <ListGroup.Item as="li" className={styles.cambioFecha} >Cambio inicial: ${cambio}</ListGroup.Item>
-                      <ListGroup.Item as="li" className={styles.cambioFecha} >
-                        {fecha}
-                      </ListGroup.Item>
+
                     </ListGroup>
 
                     <br></br>

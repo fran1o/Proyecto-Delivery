@@ -7,6 +7,17 @@ import styles from '../CSS/form.module.css'
 
 const TablaPedido = () => {
 
+//loading..
+
+  const [loading, setLoading] = useState(true)
+  
+  
+  useEffect(() => {
+    setTimeout(() =>{
+        setLoading(false);
+    }, 2000)
+  }, [])
+
 //Variables de estado
 
   const [listRepartidores, setListRepartidores] = useState([])
@@ -33,18 +44,10 @@ const TablaPedido = () => {
   }
   getRepartidores()
 
-},[listRepartidores])
+},[])
 
-//loading..
+console.log( listRepartidores )
 
-  const [loading, setLoading] = useState(true)
-  
-  
-  useEffect(() => {
-    setTimeout(() =>{
-        setLoading(false);
-    }, 2000)
-  }, [])
 
 
   return <>
@@ -58,7 +61,6 @@ const TablaPedido = () => {
                       id={repartidor.id}
                       nombre={repartidor.nombre}
                       cambio={repartidor.cambio}
-                      fecha={repartidor.fecha} 
                 />)
               }           
   

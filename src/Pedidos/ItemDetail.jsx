@@ -13,7 +13,7 @@ const ItemDetail = ({repartidores}) => {
 
   const totalSumary = () => {
 
-    return pedidosFiltrados.reduce((acum, ped) => ped.precio = (Number(ped.precio) + acum), 0)
+    return pedidosFiltrados.reduce((acum, ped) => acum = (Number(ped.precio) + acum), 0)
 }
 
 

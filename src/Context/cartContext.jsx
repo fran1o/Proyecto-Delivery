@@ -10,36 +10,59 @@ export function useCartContext() {return useContext(cartContext)}
 
 function CartContextProvider({children}){
 
+  const [mostrarPedidos, setMostrarPedidos] = useState(true)
+  
   const [orders, setOrders] = useState([])
   const db = getFirestore()
 
   useEffect(() => {
+    
+
     const db = getFirestore()
   
-  //Traigo la info del pedido de mi base de datos y la guardo en setOrders
+    const getPedidos = async () =>{
   
-      const queryCollection = collection(db,'pedidos')
+      try {
+        const querySnapshot = await getDocs(collection(db,'pedidos'))
+        const pedidos = []
+  
+        querySnapshot.forEach((doc) => {
+          pedidos.push({ ...doc.data(), id: doc.id })
+        })
+        setOrders(pedidos)
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getPedidos()
+  
+  }, [mostrarPedidos]);
 
-  
-        getDocs(queryCollection)
-        .then((respuesta) => 
-                setOrders(
-                  respuesta.docs.map((order) => ({id: order.id, ...order.data() } ))
-                ))
-        .catch((err) => console.log(err))
 
-  },[])
-  
+
+
 
 //Eliminar pedido
 
-const eliminarPedido = async (id) => {
+  const eliminarPedido = async (id) => {
     await deleteDoc(doc(db, 'pedidos', id))
+
+    setMostrarPedidos(!mostrarPedidos)
+  }
+
+
+//Actualizar historial
+
+  const actualizarHistorial = () => {
+
+    setMostrarPedidos(!mostrarPedidos)
+    
   }
 
 
 
-    return <cartContext.Provider value={{ orders, eliminarPedido }} >
+    return <cartContext.Provider value={{ orders, eliminarPedido, actualizarHistorial}} >
                 {children}
             </cartContext.Provider>
 
