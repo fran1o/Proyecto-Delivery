@@ -35,12 +35,13 @@ const ItemHistorial = () => {
   </tbody>
 </Table>)}
     
-    <Button onClick={() => actualizarHistorial()} >Actualizar Historial</Button>
   </div>
   
     :
     <h1 className={styles.noPedidos}>No hay pedidos</h1>
     }
+
+    <Button onClick={() => actualizarHistorial()} >Actualizar Historial</Button>
   
   </>
 }
