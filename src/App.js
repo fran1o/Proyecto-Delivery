@@ -22,7 +22,7 @@ function App() {
             <Route path='/crearrepartidor' element={<Repartidores />} />
             <Route path='/repartidores' element={<TablasRepartidores />} />
             <Route path='/historial' element={<Historial />} />
-            <Route path='/Proyecto-Delivery' element={<Home />} />
+            <Route path='*' element={<Home />} />
             <Route path='/repartidor/:idRepartidor' element={<ItemDetailPedidos />} />
           </Routes>
         </div>
