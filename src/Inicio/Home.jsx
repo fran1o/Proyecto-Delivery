@@ -19,22 +19,22 @@ const Home = () => {
     }, [])
  
 
-  return (
-      <>
-        {loading ? <Spinner className={styles.loading} animation="border" role="status">
-                    <span></span>
-                </Spinner>
-                 :
-                 <div className={styles.container}>
-                 <h1 className={styles.goodNight}>¡ Buenas Noches !</h1>
-                 
-              </div>
-             }
-       
-      
-      </>
-   
-  )
+    return (
+        <>
+          {loading ? <Spinner className={styles.loading} animation="border" role="status">
+                      <span></span>
+                  </Spinner>
+                   :
+                   <div className={styles.container}>
+                   <h1 className={styles.goodNight}>¡ Buenas Noches !</h1>
+                   
+                </div>
+               }
+         
+        
+        </>
+     
+    )
 }
 
 export default Home
