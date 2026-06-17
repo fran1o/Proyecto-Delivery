@@ -1,3 +1,22 @@
+# Delivery Pepote
+
+## Descripción
+Sistema de gestión para pizzería desarrollado con React y Firebase.
+
+## Funcionalidades
+- Gestión de pedidos
+- Administración de repartidores
+- Asignación de pedidos
+- Estadísticas diarias
+- Control de efectivo
+
+## Tecnologías
+- React
+- Firebase
+- JavaScript
+- Bootstrap
+- React Router
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -83,6 +102,3 @@ INSTALACION
 
 "firebase": "^9.6.6", inicia nuestra conexion entre la app y su base de datos en firebase/firestore
 
-DEMO
-
-https://delivery-pepote-5219ee.netlify.app
